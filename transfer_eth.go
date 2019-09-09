@@ -14,7 +14,7 @@ import (
 
 func transferEth() {
   
-    privateKey, err := crypto.HexToECDSA("fad9c8855b740a0b7ed4c221dbad0f33a83a49cad6b3fe8d5817ac83d38b6a19")
+    privateKey, err := crypto.HexToECDSA("5CD956063F3EB0F959DD961B04142314D78D3E400A504B644A29A96CC38852E6")
     if err != nil {
         log.Fatal(err)
     }
@@ -38,7 +38,7 @@ func transferEth() {
         log.Fatal(err)
     }
 
-    toAddress := common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")
+    toAddress := common.HexToAddress(address)
     var data []byte
     tx := types.NewTransaction(nonce, toAddress, value, gasLimit, gasPrice, data)
 
