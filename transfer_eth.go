@@ -12,6 +12,7 @@ import (
     "github.com/ethereum/go-ethereum/crypto"
 )
 
+var transactionHash string
 func transferEth() {
   
     privateKey, err := crypto.HexToECDSA("5CD956063F3EB0F959DD961B04142314D78D3E400A504B644A29A96CC38852E6")
@@ -56,6 +57,7 @@ func transferEth() {
     if err != nil {
         log.Fatal(err)
     }
-
-    fmt.Printf("tx sent: %s", signedTx.Hash().Hex())
+    transactionHash = signedTx.Hash().Hex()
+    fmt.Printf("tx sent: %s", transactionHash )
+    
 }

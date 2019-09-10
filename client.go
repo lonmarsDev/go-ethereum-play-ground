@@ -21,4 +21,5 @@ func main() {
 	generateWallet()
 	transferEth()
 	accountBalance()
+	monitorTransaction()
 }
