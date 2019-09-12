@@ -7,16 +7,16 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 )
 
-func accountBalance(locaddress string) {
+func accountBalance() {
 	fmt.Println("logging account balance")
-	account := common.HexToAddress(locaddress)
-	fmt.Println("Account %v", account)
+	account := common.HexToAddress(address)
+	fmt.Println("Account %v", account )
 	balance, err := client.BalanceAt(context.Background(), account, nil)
 	if err != nil {
-		fmt.Println("error %v", err)
+		fmt.Println("error %v", err )
 	}
-	fmt.Println("my %s account balance : %s", locaddress, balance) // 25893180161173005034
-
+	fmt.Println("my %s account balance : %s", address, balance) // 25893180161173005034
+	
 	// blockNumber := big.NewInt(0)
 	// balanceAt, err := client.BalanceAt(context.Background(), account, blockNumber)
 	// if err != nil {

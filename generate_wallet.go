@@ -11,10 +11,8 @@ import (
 )
 
 var address string
-var privateKey2 string
 
 func generateWallet() {
-	var err error
 	privateKey, err := crypto.GenerateKey()
 	if err != nil {
 		log.Fatal(err)
@@ -22,8 +20,7 @@ func generateWallet() {
 
 	privateKeyBytes := crypto.FromECDSA(privateKey)
 	fmt.Println(hexutil.Encode(privateKeyBytes)[2:]) // fad9c8855b740a0b7ed4c221dbad0f33a83a49cad6b3fe8d5817ac83d38b6a19
-	privateKey2 = hexutil.Encode(privateKeyBytes)[2:]
-	
+
 	publicKey := privateKey.Public()
 	publicKeyECDSA, ok := publicKey.(*ecdsa.PublicKey)
 	if !ok {
